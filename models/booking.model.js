@@ -4,6 +4,7 @@ const bookingSchema = new mongoose.Schema({
     custName:String,
     email:String,
     phoneNum: Number,
+    packageName: String,
     travelerNum: {
         type: Number,
         default: 1

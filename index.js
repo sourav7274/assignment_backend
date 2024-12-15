@@ -41,9 +41,6 @@ app.get("/packages",async (req,res) =>{
    }
 })
 
-
-console.log('MongoDB URI:', process.env.MONGODB);
-
 async function getPackagebyID(id)
 {
    try{

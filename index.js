@@ -17,8 +17,7 @@ const Booking = require('./models/booking.model')
 initialDatabase()
 
 app.get('/',async (req,res) =>{
-    const data = await Package.find()
-    res.json({message:"Testing",data})
+    res.json({message:"Testing"})
 })
 
 

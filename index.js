@@ -47,7 +47,7 @@ async function getPackagebyID(id)
 {
    try{
     const data = Package.findById(id)
-    console.log(data)
+    // console.log(data)
     return data
    }
    catch(error)
@@ -124,6 +124,7 @@ async function updatePackage(id,data)
 {
     try{    
         const package = await Package.findByIdAndUpdate(id,data,{new:true})
+        // console.log(data,package)
         return package
     } catch(error)
     {
@@ -131,7 +132,7 @@ async function updatePackage(id,data)
     }
 }
 
-app.put('/admin/pacages/:id',async (req,res) =>{
+app.put('/admin/packages/:id',async (req,res) =>{
     try{
         const upDPackage = await updatePackage(req.params.id,req.body)
         res.status(200).json({message:"Update Successfull",upDPackage})
@@ -153,7 +154,7 @@ async function deletePackage(id)
     }
 }
 
-app.delete('/admin/package/:id',async (req,res) =>{
+app.delete('/admin/packages/:id',async (req,res) =>{
     try{
         const deleteData = await deletePackage(req.params.id)
         res.status(200).json({message:"Delete Successfull"})

@@ -98,6 +98,25 @@ app.post('/bookings',async (req,res) => {
     }
 })
 
+
+app.get('/admin/bookings',async (req,res) =>{
+    try{
+        const bookings = await Booking.find()
+        if (bookings)
+        {
+            res.status(200).json({message:"Bookings fetched",bookings})
+        }
+        else
+        {
+            res.status(404).json({error:"No bookings found"})
+        }
+    } catch(error)
+    {
+        res.status(500).json({error:"Error getting the bookings",error})
+    }
+})
+
+
 async function savePackage(data)
 {
     try{

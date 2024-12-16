@@ -1,17 +1,20 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const packageSchema = new mongoose.Schema({
-    title:String,
+    title: String,
     description: String,
     price: Number,
-    destination:String,
-    availableDates:{
+    destination: String,
+    availableDates: {
         type: [Date]
     },
-    image:String
-})
+    image: String,
+    category: {
+        type: [String],
+        enum: ['Mountain', 'Beach', 'Grasslands']
+    }
+});
 
+const Package = mongoose.model('Package', packageSchema);
 
-const Package = mongoose.model('Package',packageSchema)
-
-module.exports = Package
+module.exports = Package;

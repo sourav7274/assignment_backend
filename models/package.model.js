@@ -4,6 +4,7 @@ const packageSchema = new mongoose.Schema({
     title:String,
     description: String,
     price: Number,
+    destination:String,
     availableDates:{
         type: [Date]
     },
